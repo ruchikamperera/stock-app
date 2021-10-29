@@ -22,6 +22,12 @@
           <p>
             Daily Low Price - {{stock.DailyLowPrice}}
           </p>
+          <p *ngIf="!mobileView">
+            52 week high price - 
+          </p>
+          <p  *ngIf="!mobileView">
+            52 week low price  - 
+          </p>
         </mat-card-content>
         <mat-card-actions>
           <mat-slide-toggle (onchange)="onToggleChange(stock.Id)" [aria-label]="isSubscribedToEmailsMessage">

@@ -15,11 +15,15 @@ import * as signalR from '@aspnet/signalr';
 export class StockDetailsComponent implements OnInit {
 
   stocks : Stock[]= [];
+  mobileView:boolean =false;
   constructor(public signalRService: SignalRService
    , private stockServiceService: StockService
     ) { }
 
   ngOnInit() {
+    if (window.screen.width === 360) { // 768px portrait
+      this.mobileView = true;
+    }
     this.signalRService.startConnection();
     this.signalRService.addStockDataListener();   
     this.getStockDetails();
