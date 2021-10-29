@@ -4,35 +4,35 @@
   </mat-toolbar>
   <div class="content">
     <div *ngFor="let stock in stocks" >
-      <mat-card class="mat-elevation-z4">
-        <mat-card-header>
-          <mat-card-title>Company Name</mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="./../assets/images/test.jpg">
-        <mat-card-content>
-          <p>
-            {{stock.Name}}
-          </p>
-          <p>
-           Current Price - {{stock.CurrentPrice}}
-          </p>
-          <p>
-            Daily High Price - {{stock.DailyHighPrice}}
-          </p>
-          <p>
-            Daily Low Price - {{stock.DailyLowPrice}}
-          </p>
-          <p *ngIf="!mobileView">
-            52 week high price - 
-          </p>
-          <p  *ngIf="!mobileView">
-            52 week low price  - 
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <mat-slide-toggle (onchange)="onToggleChange(stock.Id)" [aria-label]="isSubscribedToEmailsMessage">
-          </mat-slide-toggle>
-        </mat-card-actions>
-      </mat-card>
+        <mat-card class="mat-elevation-z4">
+          <mat-card-header>
+            <mat-card-title>Company Name</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src="./../assets/images/test.jpg">
+          <mat-card-content>
+            <p>
+              {{stock.Name}}
+            </p>
+            <p>
+            Current Price - {{stock.CurrentPrice}}
+            </p>
+            <p>
+              Daily High Price - {{stock.DailyHighPrice}}
+            </p>
+            <p>
+              Daily Low Price - {{stock.DailyLowPrice}}
+            </p>
+            <p *ngIf="!mobileView">
+              52 week high price - 
+            </p>
+            <p  *ngIf="!mobileView">
+              52 week low price  - 
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <mat-slide-toggle  (onchange)="onToggleChange(stock.Id)" [aria-label]="">
+            </mat-slide-toggle>
+          </mat-card-actions>
+        </mat-card>
     </div> 
   </div>
